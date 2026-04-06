@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HWP AI Bridge</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=IBM+Plex+Sans+KR:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-orb orb-a"></div>
+    <div class="bg-orb orb-b"></div>
+
+    <main class="shell">
+      <header class="hero">
+        <p class="chip">kordoc workflow</p>
+        <h1>HWP AI Bridge</h1>
+        <p class="lead">HWP/HWPX를 AI 친화 문서로 변환하고, 편집 결과를 다시 HWPX로 복원하세요.</p>
+      </header>
+
+      <section class="panel">
+        <h2>1) Extract: HWP/HWPX/PDF -> AI 문서</h2>
+        <div id="dropZone" class="dropzone">
+          파일을 여기로 드래그하거나 클릭해서 선택하세요.
+          <input id="extractFile" type="file" accept=".hwp,.hwpx,.pdf" hidden />
+        </div>
+
+        <div class="row">
+          <label>
+            페이지 범위 (선택)
+            <input id="pages" type="text" placeholder="예: 1-3,5" />
+          </label>
+          <label>
+            템플릿 모드
+            <select id="templateMode">
+              <option value="guarded" selected>guarded (권장)</option>
+              <option value="raw">raw</option>
+            </select>
+          </label>
+          <label class="checkbox-wrap">
+            <input id="removeHeaderFooter" type="checkbox" />
+            머리글/바닥글 제거
+          </label>
+        </div>
+
+        <button id="extractBtn" class="btn">변환 실행</button>
+        <p id="extractStatus" class="status"></p>
+
+        <div class="output-grid">
+          <article>
+            <h3>AI Working Markdown</h3>
+            <textarea id="aiMarkdown" rows="14" placeholder="변환 결과가 여기에 표시됩니다."></textarea>
+            <button id="downloadMd" class="btn ghost">.ai.md 다운로드</button>
+          </article>
+          <article>
+            <h3>Structured JSON</h3>
+            <textarea id="structuredJson" rows="14" placeholder="구조화 JSON이 여기에 표시됩니다."></textarea>
+            <button id="downloadJson" class="btn ghost">.structured.json 다운로드</button>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>2) Restore: 편집본 -> HWPX</h2>
+
+        <div class="row">
+          <label class="grow">
+            Markdown 붙여넣기
+            <textarea id="restoreMarkdown" rows="10" placeholder="편집한 markdown 내용을 붙여넣으세요."></textarea>
+          </label>
+        </div>
+
+        <div class="row">
+          <label class="checkbox-wrap">
+            <input id="strictTemplate" type="checkbox" checked />
+            strict-template (마커 필수)
+          </label>
+          <label>
+            또는 파일 업로드
+            <input id="restoreFile" type="file" accept=".md,.json" />
+          </label>
+        </div>
+
+        <div class="row actions">
+          <button id="restoreFromTextBtn" class="btn">텍스트로 HWPX 만들기</button>
+          <button id="restoreFromFileBtn" class="btn ghost">파일로 HWPX 만들기</button>
+        </div>
+        <p id="restoreStatus" class="status"></p>
+      </section>
+    </main>
+
+    <script src="app.js" type="module"></script>
+  </body>
+</html>

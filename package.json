@@ -1,0 +1,30 @@
+{
+  "name": "kordoc-ai-bridge",
+  "version": "0.1.0",
+  "description": "HWP/HWPX to AI-friendly docs and back to HWPX",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "cli": "node src/index.js",
+    "web": "node src/server.js",
+    "extract": "node src/index.js extract",
+    "restore": "node src/index.js restore",
+    "serve": "node src/index.js serve"
+  },
+  "keywords": [
+    "hwp",
+    "hwpx",
+    "kordoc",
+    "ai",
+    "markdown"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^14.0.3",
+    "express": "^5.2.1",
+    "kordoc": "^1.7.2",
+    "multer": "^2.1.1",
+    "pdfjs-dist": "^5.6.205"
+  }
+}
