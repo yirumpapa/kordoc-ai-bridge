@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">YouTube Back Click</string>
+    <string name="accessibility_service_label">YouTube Back Click Service</string>
+    <string name="overlay_button_desc">유튜브 되감기 버튼</string>
+    <string name="overlay_running">오버레이가 실행 중입니다.</string>
+    <string name="tap_count_fmt">트리거 횟수: %1$d</string>
+    <string name="x_position_fmt">X 좌표: %1$d%%</string>
+    <string name="y_position_fmt">Y 좌표: %1$d%%</string>
+</resources>
