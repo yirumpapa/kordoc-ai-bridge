@@ -7,4 +7,8 @@
     <string name="tap_count_fmt">트리거 횟수: %1$d</string>
     <string name="x_position_fmt">X 좌표: %1$d%%</string>
     <string name="y_position_fmt">Y 좌표: %1$d%%</string>
+    <string name="history_required_fields">주소, 제목, 자막을 모두 입력해 주세요.</string>
+    <string name="history_saved">시청 기록을 저장했습니다.</string>
+    <string name="history_cleared">저장된 기록을 모두 삭제했습니다.</string>
+    <string name="history_empty">아직 저장된 기록이 없습니다.</string>
 </resources>
