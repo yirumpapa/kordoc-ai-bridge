@@ -178,7 +178,6 @@ class MainActivity : AppCompatActivity() {
             "https://$url"
         }
     }
-    }
 
     private fun renderTexts(
         tapText: TextView,
